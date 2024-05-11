@@ -37,9 +37,9 @@
 	h1, h2, h3 {
 		color: var(--color-primary);
 	}
-
+	
 	/*
-		Details Blocks
+	Details Blocks
 	*/
 	
 	summary {
@@ -66,9 +66,9 @@
 	}
 	
 	/* 
-		Table of Contents 
+	Table of Contents 
 	*/
-
+	
 	#toc {
 		background-color: var(--color-background);
 		/* border: 1px solid ; */
@@ -103,10 +103,9 @@
 		text-decoration: underline;
 	}
 	
-	/* Content Styling */
 	.content {
 		max-width: 800px;
-		margin-right: 240px; /* Makes room for the fixed TOC */
+		margin-right: 240px; /* Makes room for the TOC */
 	}
 	
 	table {
@@ -134,12 +133,9 @@
 		text-decoration: underline;
 	}
 	
-	/* Responsive adjustments */
 	@media (max-width: 960px) {
 		#toc {
-			position: relative;
-			width: auto;
-			margin-bottom: 20px;
+			display: none
 		}
 		
 		.content {
@@ -155,7 +151,7 @@
 	.tooltip {
 		position: relative;
 		display: inline-block;
-		border-bottom: 1px dotted var(--color-primary); /* If you want dots under the hoverable text */
+		border-bottom: 1px dotted var(--color-primary);
 	}
 	
 	.tooltip .tooltiptext {
@@ -213,9 +209,9 @@
 	}
 	
 	/*
-		Icons
+	Icons
 	*/
-
+	
 	#icon-container {
 		position: fixed;
 		bottom: 20px;
