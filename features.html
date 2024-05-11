@@ -7,14 +7,7 @@
 	<title>Document</title>
 </head>
 <style>
-	
-	/* :root {
-		--color-text: #0d0f17;
-		--color-background: #e8ebf2;
-		--color-primary: #353e5f;
-		--color-secondary: #a592c3;
-		--color-accent: #8159a1;
-	} */
+
 	:root {
 		--color-text: #e9ebf3;
 		--color-background: #0c0f16;
@@ -38,9 +31,7 @@
 		color: var(--color-primary);
 	}
 	
-	/*
-	Details Blocks
-	*/
+	/* Summary/Details Blocks */
 	
 	summary {
 		cursor:pointer
@@ -65,13 +56,10 @@
 		margin: 0 0 20px 0;
 	}
 	
-	/* 
-	Table of Contents 
-	*/
+	/* TOC (Table of Contents) */
 	
 	#toc {
 		background-color: var(--color-background);
-		/* border: 1px solid ; */
 		padding: 10px;
 		margin-bottom: 20px;
 		width: 200px;
@@ -105,7 +93,7 @@
 	
 	.content {
 		max-width: 800px;
-		margin-right: 240px; /* Makes room for the TOC */
+		margin-right: 240px;
 	}
 	
 	table {
@@ -146,8 +134,9 @@
 	html {
 		scroll-behavior: smooth;
 	}
-	
-	
+
+	/* Tooltips */
+
 	.tooltip {
 		position: relative;
 		display: inline-block;
@@ -156,7 +145,7 @@
 	
 	.tooltip .tooltiptext {
 		opacity: 0%;
-		width: var(--tooltip-width);
+		width: calc(var(--tooltip-width) * 2);
 		background-color: black;
 		color: #fff;
 		text-align: center;
@@ -166,22 +155,11 @@
 		
 		position: absolute;
 		z-index: 1;
-		
-		bottom: 100%;
-		left: 50%;
-		margin-left: calc(var(--tooltip-width) / -2);
-	}
-	
-	.tooltip .tooltiptext.ttright {
-		top: -50%;
+
+		top: 50%;
 		left: 105%;
-		bottom: initial;
-		margin-left: 2px;
-	}
-	
-	.tooltiptext.fat {
-		width: calc(var(--tooltip-width) * 2);
-		margin-left: calc(var(--tooltip-width) * 2 / -2);
+		margin-left: 3px;
+		transform: translate(0, -50%)
 	}
 	
 	.tooltip:hover .tooltiptext {
@@ -191,26 +169,15 @@
 	.tooltip .tooltiptext::after {
 		content: " ";
 		position: absolute;
-		top: 100%; /* At the bottom of the tooltip */
-		left: 50%;
-		margin-left: -5px;
+		top: 50%;
+		right: 100%; 
+		margin-top: -5px;
 		border-width: 5px;
 		border-style: solid;
-		border-color: black transparent transparent transparent;
-	}
-	
-	.tooltip .tooltiptext.ttright::after {
-		top: 50%;
-		left: initial;
-		right: 100%; /* To the left of the tooltip */
-		margin-left: initial;
-		margin-top: -5px;
 		border-color: transparent black transparent transparent;
 	}
 	
-	/*
-	Icons
-	*/
+	/* Icons */
 	
 	#icon-container {
 		position: fixed;
@@ -250,8 +217,8 @@
 	</div>
 	
 	<div class="content">
-		<h1>Vice</h1>
-		<strong>Guide last Updated: 11/05/24</strong><br><br>
+		<h1>Vice Features List</h1>
+		<strong>List last Updated: 11/05/24</strong><br><br>
 		<div>
 			<a href="https://github.com/Oxyopiia/ViceMod/releases" target="_blank">
 				<img alt="downloads" src="https://img.shields.io/github/v/release/Oxyopiia/ViceMod?color=4166f5&style=for-the-badge"/>
@@ -264,7 +231,7 @@
 		
 		<section id="general">
 			<details open="true">
-				<summary>General Features</summary>
+				<summary>General</summary>
 				<ul>
 					<li><strong>Backpack Renaming</strong></li>
 					<li><strong>Trash Protection</strong></li>
@@ -280,7 +247,7 @@
 		
 		<section id="worlds">
 			<details>
-				<summary>World-Specific Features</summary>
+				<summary>World-Specific</summary>
 				<ul>
 					<h3>World 4</h3>
 					<li>Show Next Cooking Item</li>
@@ -297,7 +264,7 @@
 					<h3>Exonitas</h3>
 					<li>Power Box Timer</li>
 					<li><div class="tooltip">Baby Mode
-						<span class="tooltiptext ttright fat">Makes players have baby models to allow better visibility.</span>
+						<span class="tooltiptext">Makes players have baby models to allow better visibility.</span>
 					</div></li>
 					<li>Hide Bloat Messages</li>
 				</ul>
@@ -310,9 +277,9 @@
 				<ul>
 					<li>
 						<div class="tooltip"><Strong>Item Cooldown Overlay</Strong>
-							<span class="tooltiptext ttright fat">
-								Extremely customisable:<br >
-								- 4 Unique styles<br>
+							<span class="tooltiptext">
+								<strong>Displays Item Cooldowns for hotbar items in real time with:</strong><br>
+								- 5 Unique styles<br>
 								- Customisable opacity<br>
 								- Toggleable cooldown next to cursor<br>
 								- Toggleable ready text<br>
@@ -336,7 +303,11 @@
 					<li>Despawn Warning</li>
 					
 					<h3>Specific</h3>
-					<li>Wasteyard Cooldown Timer (customisable)</li>
+					<li><div class="tooltip">Wasteyard Cooldown Timer
+						<span class="tooltiptext">
+							Renders a timer for the Wasteyard cooldown. Also sends a chat message and a <strong>customisable</strong> sound when the Wasteyard is ready.
+						</span>
+					</div></li>
 					<li>Abyssal Vice Laser Warning</li>
 				</ul>
 			</details>
@@ -352,7 +323,12 @@
 					<li>Room Waypoints</li>
 					<li>Defibrillator Counter</li>
 					<li>Hide Style Points</li>
-					<li>Auto Information Relaying</li>
+					<li><div class="tooltip">Auto Relay Information
+						<span class="tooltiptext">
+							Sends information about newly discovered villagers to your teammates. This can also be filtered out even after opting out of sharing.<br>
+							<strong>Use at your Own Risk</strong> (probably fine tho)
+						</span>
+					</div></li>
 				</ul>
 			</details>
 		</section>
@@ -362,7 +338,7 @@
 				<summary>Arenas</summary>
 				<ul>
 					<li><div class="tooltip">Live Arena Information
-						<span class="tooltiptext ttright fat">Displays drop rates, wave timers, and more information in Arenas.</span>
+						<span class="tooltiptext">Displays drop rates, wave timers, and more information in Arenas.</span>
 					</div></li>
 					<li>New Mob Effects Notification</li>
 					<li>Cooldown Reminder</li>
